@@ -1,0 +1,44 @@
+set nocompatible
+filetype off
+
+syntax on
+set tabstop=4
+"set whichwrap+=<,>,h,l,[,]
+set autoindent
+set clipboard=unnamed
+set ai
+set number
+set mouse=a
+
+" make your code line clear and aligned
+set cursorline
+" there will be a underline on your code line meanwhile
+
+:inoremap ( ()<ESC>i
+:inoremap ) <c-r>=ClosePair(')')<CR>
+:inoremap { {<CR>}<ESC>i
+:inoremap } <c-r>=ClosePair('}')<CR>
+:inoremap [ []<ESC>i
+:inoremap ] <c-r>=ClosePair(']')<CR>
+:inoremap " ""<ESC>i
+:inoremap ' ''<ESC>i
+function! ClosePair(char)
+	if getline('.')[col('.') - 1] == a:char
+		return "\<Right>"
+	else
+		return a:char
+	endif
+endfunction
+
+autocmd filetype c,cpp nnoremap <F9> :w <bar> exec '!g++ --std=c++11 -Wall -Ofast '.shellescape('%').' -o '.shellescape('%:r').'&& echo ===  && ./'.shellescape('%:r')<CR>
+" y = copy; p = paste; u = undo; ctrl + r = redo; dd = delete a line"
+
+"set comment color"
+hi comment ctermfg=blue
+set bg=dark
+
+
+
+
+
+
