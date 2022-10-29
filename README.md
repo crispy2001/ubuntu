@@ -72,6 +72,6 @@ set t_Co=256
 colorscheme hybrid
 ```
 [colorsheme一覽](https://colorswat.ch/vim/list?cat=all)
-我覺得[hybrid](https://github.com/w0ng/vim-hybrid)挺美ㄉ
+我覺得[hybrid](https://github.com/w0ng/vim-hybrid)挺美~
 
 
